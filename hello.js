@@ -34,3 +34,28 @@ let elName2 = document.getElementById("name2");
 elName2.textContent = myName2; // '!' non-null assertion operator | dev know that is's not null
 let elName3 = document.getElementById("name3");
 elName3.textContent = myName3; // '!' non-null assertion operator | dev know that is's not null
+// object types with properties | both optional using the null operator
+function yourNameOpt(obj) {
+    let fullName; // explicit type annotation
+    if (obj.fName && obj.lName) {
+        fullName = obj.fName.charAt(0).toUpperCase() + obj.fName.slice(1).toLowerCase();
+        fullName += ` ${obj.lName.charAt(0).toUpperCase() + obj.lName.slice(1).toLowerCase()}`;
+    }
+    else if (!obj.fName && obj.lName) { // if lName is an argument add to fullName
+        fullName = ` ${obj.lName.charAt(0).toUpperCase() + obj.lName.slice(1).toLowerCase()}`; // explicit type annotation
+    }
+    else {
+        fullName = obj.fName.charAt(0).toUpperCase() + obj.fName.slice(1).toLowerCase(); // '!' non-null assertion operator | dev know that is's not null
+    }
+    return fullName;
+}
+let myName4 = yourNameOpt({ fName: "mickie", lName: "porccelli" }); // explicit type annotation
+let myName5 = yourNameOpt({ lName: "contaldo" }); // explicit type annotation
+let myName6 = yourNameOpt({ fName: "bob" }); // explicit type annotation
+// get html element / populate element
+let elName4 = document.getElementById("name4");
+elName4.textContent = myName4; // '!' non-null assertion operator | dev know that is's not null
+let elName5 = document.getElementById("name5");
+elName5.textContent = myName5; // '!' non-null assertion operator | dev know that is's not null
+let elName6 = document.getElementById("name6");
+elName6.textContent = myName6; // '!' non-null assertion operator | dev know that is's not null
