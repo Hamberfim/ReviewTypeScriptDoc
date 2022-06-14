@@ -59,3 +59,19 @@ let elName5 = document.getElementById("name5");
 elName5.textContent = myName5; // '!' non-null assertion operator | dev know that is's not null
 let elName6 = document.getElementById("name6");
 elName6.textContent = myName6; // '!' non-null assertion operator | dev know that is's not null
+// union types
+function prntId(id) {
+    return `${id}`;
+}
+let fnPrintId1 = prntId("123");
+let elFnPrintId1 = document.getElementById("fnPrintId1");
+elFnPrintId1.textContent = fnPrintId1;
+let fnPrintId2 = prntId(321);
+let elFnPrintId2 = document.getElementById("fnPrintId2");
+elFnPrintId2.textContent = fnPrintId2;
+let fnPrintId3 = prntId("21" + 3);
+let elFnPrintId3 = document.getElementById("fnPrintId3");
+elFnPrintId3.textContent = fnPrintId3;
+let fnPrintId4 = prntId(2 + "1" + 3);
+let elFnPrintId4 = document.getElementById("fnPrintId4");
+elFnPrintId4.textContent = fnPrintId4;
